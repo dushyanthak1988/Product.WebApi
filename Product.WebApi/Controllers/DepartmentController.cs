@@ -15,14 +15,14 @@ namespace Product.WebApi.Controllers
             _dataRepository = dataRepository;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetDepartmentAll")]
         public IActionResult Get()
         {
             IEnumerable<Department> departments = _dataRepository.GetAll();
             return Ok(departments);
         }
 
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetDepartmentByid")]
         public IActionResult Get(long id)
         {
             Department obj = _dataRepository.Get(id);
