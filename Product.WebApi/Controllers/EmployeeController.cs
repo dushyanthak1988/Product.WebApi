@@ -58,7 +58,7 @@ namespace Product.WebApi.Controllers
             {
                 return NotFound("The Employee record couldn't be found.");
             }
-            _dataRepository.Update(employeeToUpdate, employee);
+            _dataRepository.Update(employee);
             return NoContent();
         }
         // DELETE: api/Employee/5

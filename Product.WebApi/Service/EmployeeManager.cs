@@ -25,8 +25,11 @@ namespace Product.WebApi.Service
             _employeeContext.Employees.Add(entity);
             _employeeContext.SaveChanges();
         }
-        public void Update(Employee employee, Employee entity)
+        public void Update(Employee entity)
         {
+
+
+            var employee = _employeeContext.Employees.FirstOrDefault(e => e.EmployeeId == entity.EmployeeId);
             employee.FirstName = entity.FirstName;
             employee.LastName = entity.LastName;
             employee.Email = entity.Email;
